@@ -939,7 +939,7 @@ def handle(data):
     question_variants = [f'{number}. {title}' for number, title in enumerate(question.answers, start=1)]
     question_variants = '\n'.join(question_variants)
 
-    question_text = f'<b>{question_title}</b>\n\nВарианты ответов:\n{question_variants}'
+    question_text = f'<b>[{question_number} из 100] {question_title}</b>\n\nВарианты ответов:\n{question_variants}'
     keyboard = [{'type': 'inline', 'text': f'Вариант {number + 1}', 'line': number, 'index_in_line': 0}
                 for number in range(len(question.answers))]
     correct_answer_keyboard = keyboard[question.correct_answer_index]['text']
